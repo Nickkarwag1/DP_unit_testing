@@ -1,5 +1,2 @@
 /node_modules
 /.idea
-tsconfig.json
-.mocharc.json
-.prettierrc.json
