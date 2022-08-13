@@ -16,4 +16,6 @@ export const EXPECTED_VALUES_NEGATIVE = {
     EMAIL_1: "example@gmail.com",
     EMAIL_2: "example@icloud.com",
     EMAIL_3: "example12345@icloud.com",
+    MESSAGE_INVALID_SYMBOLS: "This field contain invalid symbols",
+    MISSING_SYMBOL_DOG: "Missing symbols ",
 };

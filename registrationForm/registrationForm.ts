@@ -1,39 +1,36 @@
-import { symbols, symbolsForEmail, symDog } from "../helpers/symbols";
+import { SymbolsForRegistrationForm, SYM_DOG, SYMBOLS_FOR_EMAIL } from "../helpers/symbolsForRegistrationForm";
 
 export class RegistrationForm {
     static loginField(login: string): string {
         const arrayLogin = login.split("");
-        const checkArrLogin = arrayLogin.map((item: string) => {
-            if (symbols.includes(item)) {
-                console.log(`Text ${login} in login: contains invalid symbols '${item}'`);
-            }
-            return item;
-        });
-        return checkArrLogin.join("");
+        const checkArrLogin = arrayLogin.filter((item: string) => !SymbolsForRegistrationForm.includes(item));
+        if (JSON.stringify(checkArrLogin) === JSON.stringify(arrayLogin)) {
+            return login;
+        } else {
+            return "This field contain invalid symbols";
+        }
     }
 
     static passwordField(password: string): string {
         const arrayPassword = password.split("");
-        const checkArrPassword = arrayPassword.map((item: string) => {
-            if (symbols.includes(item)) {
-                console.log(`Text ${password} in password: contains invalid symbols '${item}'`);
-            }
-            return item;
-        });
-        return checkArrPassword.join("");
+        const checkArrPassword = arrayPassword.filter((item: string) => !SymbolsForRegistrationForm.includes(item));
+        if (JSON.stringify(checkArrPassword) === JSON.stringify(arrayPassword)) {
+            return password;
+        } else {
+            return "This field contain invalid symbols";
+        }
     }
 
     static emailField(email: string): string {
         const arrayEmail = email.split("");
-        if (!arrayEmail.includes(symDog)) {
-            console.log(`Text ${email} in email: not contains symbol '${symDog}'`);
+        if (!arrayEmail.includes(SYM_DOG)) {
+            return `Missing symbols ${SYM_DOG}`;
         }
-        const checkArrEmail = arrayEmail.map((item: string) => {
-            if (symbolsForEmail.includes(item)) {
-                console.log(`Text ${email} in email: contains invalid symbols '${item}'`);
-            }
-            return item;
-        });
-        return checkArrEmail.join("");
+        const checkArrEmail = arrayEmail.filter((item: string) => !SYMBOLS_FOR_EMAIL.includes(item));
+        if (JSON.stringify(checkArrEmail) === JSON.stringify(arrayEmail)) {
+            return email;
+        } else {
+            return "This field contain invalid symbols";
+        }
     }
 }
