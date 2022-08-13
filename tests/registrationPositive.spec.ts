@@ -1,5 +1,5 @@
-import { RegistrationForm } from "../registrationForm/registrationForm";
 import { expect } from "chai";
+import { RegistrationForm } from "../registrationForm/registrationForm";
 import { VALUES_POSITIVE } from "../helpers/valuesForField";
 import { EXPECTED_VALUES_POSITIVE } from "../helpers/expectedValues";
 
@@ -25,15 +25,15 @@ describe("Registration form positive test", () => {
         password = RegistrationForm.passwordField(PASSWORD_SECOND);
         expect(password).to.eql(PASSWORD_2);
     });
-    it("Email first test", function () {
+    it("Email first test",  () => {
         email = RegistrationForm.emailField(EMAIL_FIRST);
         expect(email).to.eql(EMAIL_1);
     });
-    it("Email second test", function () {
+    it("Email second test",  () => {
         email = RegistrationForm.emailField(EMAIL_SECOND);
         expect(email).to.eql(EMAIL_2);
     });
-    it("Email third test", function () {
+    it("Email third test",  () => {
         email = RegistrationForm.emailField(EMAIL_THIRD);
         expect(email).to.eql(EMAIL_3);
     });

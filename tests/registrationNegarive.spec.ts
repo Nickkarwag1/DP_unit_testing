@@ -40,17 +40,17 @@ describe("Registration form negative test", () => {
         expect(password).to.not.eql(PASSWORD_2);
         expect(password).to.equal(MESSAGE_INVALID_SYMBOLS);
     });
-    it("Email first test", function () {
+    it("Email first test",  () => {
         email = RegistrationForm.emailField(EMAIL_FIRST);
         expect(email).to.not.eql(EMAIL_1);
         expect(email).to.equal(MISSING_SYMBOL_DOG + SYM_DOG);
     });
-    it("Email second test", function () {
+    it("Email second test",  () => {
         email = RegistrationForm.emailField(EMAIL_SECOND);
         expect(email).to.not.eql(EMAIL_2);
         expect(email).to.eql(MESSAGE_INVALID_SYMBOLS);
     });
-    it("Email third test", function () {
+    it("Email third test",  () => {
         email = RegistrationForm.emailField(EMAIL_THIRD);
         expect(email).to.not.eql(EMAIL_3);
         expect(email).to.eql(MESSAGE_INVALID_SYMBOLS);
